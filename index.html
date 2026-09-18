@@ -2,61 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>subnet#57320</title>
+    <title>subnet#620000</title>
 </head>
 <body>
 
-    <h1>subnet#57320</h1>
+    <h1>subnet#620000</h1>
     <hr>
 
-    <a href="#home" onclick="showPage('home')">/home</a> | 
-    <a href="#games" onclick="showPage('games')">/games</a> | 
-    <a href="#rules" onclick="showPage('rules')">/rules</a> | 
-    <a href="#blog" onclick="showPage('blog')">/blog</a>
-    
-    <hr>
-
-    <div id="home" class="page">
+    <div id="home">
         <h2>/home</h2>
-        <p>Добро пожаловать в подсеть subnet#57320.</p>
+        <p>Добро пожаловать в subnet#620000.</p>
     </div>
+    <hr>
 
-    <div id="games" class="page" style="display: none;">
-        <h2>/games</h2>
-        <p>Список игр и проектов в подсети.</p>
+    <div id="info">
+        <h2>/info</h2>
+        <p>Для чего нужна подсеть?</p>
+        <p>Подсеть номер 620000 была создана для получения и обмена информацией через альтернативные источники в случаях блокировок рунета. Именно эта подсеть имеет номер 620000, что означает, что она создана для российского субъекта Свердловская Область.</p>
     </div>
+    <hr>
 
-    <div id="rules" class="page" style="display: none;">
+    <div id="rules">
         <h2>/rules</h2>
         <p>Правила использования подсети.</p>
+        <p>1. Автономия и отказоустойчивость.<br>2. Минимализм и отсутствие лишнего трафика.</p>
     </div>
+    <hr>
 
-    <div id="blog" class="page" style="display: none;">
+    <div id="blog">
         <h2>/blog</h2>
-        <p>Записи и логи.</p>
+        <p>Новости и логи узла.</p>
     </div>
-
-    <script>
-        function showPage(pageId) {
-            var pages = document.getElementsByClassName('page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = 'none';
-            }
-            var target = document.getElementById(pageId);
-            if (target) {
-                target.style.display = 'block';
-            }
-        }
-
-        window.onload = function() {
-            var hash = window.location.hash.replace('#', '');
-            if (hash) {
-                showPage(hash);
-            } else {
-                showPage('home');
-            }
-        };
-    </script>
 
 </body>
 </html>
