@@ -9,30 +9,55 @@
     <h1>subnet#620000</h1>
     <hr>
 
-    <div id="home">
+    <a href="#home" onclick="showPage('home')">/home</a> | 
+    <a href="#info" onclick="showPage('info')">/info</a> | 
+    <a href="#rules" onclick="showPage('rules')">/rules</a> | 
+    <a href="#blog" onclick="showPage('blog')">/blog</a>
+    
+    <hr>
+
+    <div id="home" class="page">
         <h2>/home</h2>
         <p>Добро пожаловать в subnet#620000.</p>
     </div>
-    <hr>
 
-    <div id="info">
+    <div id="info" class="page" style="display: none;">
         <h2>/info</h2>
         <p>Для чего нужна подсеть?</p>
         <p>Подсеть номер 620000 была создана для получения и обмена информацией через альтернативные источники в случаях блокировок рунета. Именно эта подсеть имеет номер 620000, что означает, что она создана для российского субъекта Свердловская Область.</p>
     </div>
-    <hr>
 
-    <div id="rules">
+    <div id="rules" class="page" style="display: none;">
         <h2>/rules</h2>
         <p>Правила использования подсети.</p>
-        <p>1. Автономия и отказоустойчивость.<br>2. Минимализм и отсутствие лишнего трафика.</p>
     </div>
-    <hr>
 
-    <div id="blog">
+    <div id="blog" class="page" style="display: none;">
         <h2>/blog</h2>
-        <p>Новости и логи узла.</p>
+        <p>Новости.</p>
     </div>
+
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            var target = document.getElementById(pageId);
+            if (target) {
+                target.style.display = 'block';
+            }
+        }
+
+        window.onload = function() {
+            var hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+        };
+    </script>
 
 </body>
 </html>
