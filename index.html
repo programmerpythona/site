@@ -6,63 +6,31 @@
 </head>
 <body>
 
-    <!-- ВЕРХНЕЕ МЕНЮ -->
-    <a href="#home" onclick="showPage('home')">🏠 Главная</a> | 
-    <a href="#games" onclick="showPage('games')">🎮 Игры</a> | 
-    <a href="#blog" onclick="showPage('blog')">📝 Блог</a> | 
-    <a href="#tools" onclick="showPage('tools')">🛠 Инструменты</a>
+    <a href="home" onclick="showPage('home')">Главная</a> | 
+    <a href="games" onclick="showPage('games')">Игры</a> | 
+    <a href="blog" onclick="showPage('blog')">Блог</a> | 
+    <a href="tools" onclick="showPage('tools')">Инструменты</a>
     
     <hr>
 
-    <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
     <div id="home" class="page">
         <h1>Добро пожаловать в мой интернет!</h1>
         <p>Это главная страница. Выбирайте раздел в меню выше.</p>
     </div>
 
-    <!-- СТРАНИЦА 2: ИГРЫ -->
     <div id="games" class="page" style="display: none;">
         <h1>Игровой раздел</h1>
         <p>Здесь будут мои проекты, браузерные игры или обзоры.</p>
     </div>
 
-    <!-- СТРАНИЦА 3: БЛОГ -->
     <div id="blog" class="page" style="display: none;">
         <h1>Мой Блог</h1>
         <p>Здесь я буду писать заметки и мысли.</p>
     </div>
 
-    <!-- СТРАНИЦА 4: ИНСТРУМЕНТЫ -->
     <div id="tools" class="page" style="display: none;">
         <h1>Полезные утилиты</h1>
         <p>Различные скрипты и инструменты.</p>
     </div>
-
-    <!-- СКРИПТ ДЛЯ ПЕРЕКЛЮЧЕНИЯ (без него в одном файле никак) -->
-    <script>
-        function showPage(pageId) {
-            // Скрываем все страницы
-            var pages = document.getElementsByClassName('page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].style.display = 'none';
-            }
-            // Показываем нужную
-            var target = document.getElementById(pageId);
-            if (target) {
-                target.style.display = 'block';
-            }
-        }
-
-        // Чтобы открывалось по прямой ссылке с хэшем
-        window.onload = function() {
-            var hash = window.location.hash.replace('#', '');
-            if (hash) {
-                showPage(hash);
-            } else {
-                showPage('home');
-            }
-        };
-    </script>
-
 </body>
 </html>
