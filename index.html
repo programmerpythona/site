@@ -2,35 +2,61 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой Мини-Интернет</title>
+    <title>subnet#57320</title>
 </head>
 <body>
 
-    <a href="home" onclick="showPage('home')">Главная</a> | 
-    <a href="games" onclick="showPage('games')">Игры</a> | 
-    <a href="blog" onclick="showPage('blog')">Блог</a> | 
-    <a href="tools" onclick="showPage('tools')">Инструменты</a>
+    <h1>subnet#57320</h1>
+    <hr>
+
+    <a href="#home" onclick="showPage('home')">/home</a> | 
+    <a href="#games" onclick="showPage('games')">/games</a> | 
+    <a href="#rules" onclick="showPage('rules')">/rules</a> | 
+    <a href="#blog" onclick="showPage('blog')">/blog</a>
     
     <hr>
 
     <div id="home" class="page">
-        <h1>Добро пожаловать в мой интернет!</h1>
-        <p>Это главная страница. Выбирайте раздел в меню выше.</p>
+        <h2>/home</h2>
+        <p>Добро пожаловать в подсеть subnet#57320.</p>
     </div>
 
     <div id="games" class="page" style="display: none;">
-        <h1>Игровой раздел</h1>
-        <p>Здесь будут мои проекты, браузерные игры или обзоры.</p>
+        <h2>/games</h2>
+        <p>Список игр и проектов в подсети.</p>
+    </div>
+
+    <div id="rules" class="page" style="display: none;">
+        <h2>/rules</h2>
+        <p>Правила использования подсети.</p>
     </div>
 
     <div id="blog" class="page" style="display: none;">
-        <h1>Мой Блог</h1>
-        <p>Здесь я буду писать заметки и мысли.</p>
+        <h2>/blog</h2>
+        <p>Записи и логи.</p>
     </div>
 
-    <div id="tools" class="page" style="display: none;">
-        <h1>Полезные утилиты</h1>
-        <p>Различные скрипты и инструменты.</p>
-    </div>
+    <script>
+        function showPage(pageId) {
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            var target = document.getElementById(pageId);
+            if (target) {
+                target.style.display = 'block';
+            }
+        }
+
+        window.onload = function() {
+            var hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+        };
+    </script>
+
 </body>
 </html>
